@@ -1,0 +1,38 @@
+<button 
+    style="background-color: rgb(242, 130, 208)">
+    <a style="color:#ffffff" href="/weapons">
+        GO BACK
+    </a>
+</button>
+<form method="POST" action="{{action}}">
+    <fieldset>
+        <label>
+            Назва зброї
+            <input name="name_of_gun" placeholder="name_of_gun" required />
+        </label>
+        
+        <label>
+            Тип шкоди
+            <input type="damage_type" name="damage_type" placeholder="damage_type" required />
+        </label>
+        
+        <label>
+            Кількість шкоди
+            <input type="damage_dealth" name="damage_dealth" placeholder="damage_dealth" />
+        </label>
+        
+        <label>
+            Час перезарядки
+            <input name="reload_seconds" placeholder="reload_seconds" />
+        </label>
+        <label>
+            Додаткова інформація
+            <input name="additional_info" placeholder="additional_info" />
+        </label>
+    </fieldset>
+
+    <input
+            type="submit"
+            value="SAVE"
+    />
+</form>
