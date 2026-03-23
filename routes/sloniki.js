@@ -17,7 +17,7 @@ router.get('/', async function(req, res, next) {
 });
 
 router.get('/create', async function(req, res, next) {
-  res.render('forms/sloniki_form');
+  res.render('forms/sloniki/sloniki_form');
 })
 
 const SALT_ROUNDS = 10
@@ -57,14 +57,8 @@ try {
   }
 });
 
-
-
-
-
-
-
 router.get('/delete', async function(req, res, next) {
-  res.render('forms/deleteSloniki');
+  res.render('forms/sloniki/deleteSloniki');
 })
 
 router.post('/delete', async function(req, res, next) {
