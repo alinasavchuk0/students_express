@@ -21,6 +21,9 @@ import streetFoodRouter from './routes/street_food.js'
 import heroessRouter from './routes/heroes.js'
 import presidentRouter from './routes/president.js'
 import productRouter from './routes/product.js'
+import batmanRouter from './routes/batman.js'
+import barRouter from './routes/bar.js'
+import accountsRouter from './routes/accounts.js'
 
 import { fileURLToPath } from 'url';
 
@@ -32,6 +35,12 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+import hbs from 'hbs';
+
+hbs.registerHelper('eq', function (a, b) {
+  return a === b;
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -53,6 +62,9 @@ app.use('/gym2', gymRouter);
 app.use('/dhd', dhdRouter);
 app.use('/street_food', streetFoodRouter);
 app.use('/product', productRouter);
+app.use('/villains', batmanRouter);
+app.use('/bar', barRouter);
+app.use('/accounts', accountsRouter);
 
 app.use((err, req, res, next) => {
   console.error('Global error caught:', err || 'Unknown error');
